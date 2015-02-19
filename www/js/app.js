@@ -18,45 +18,18 @@ angular.module('starter', ['ionic','starter.controllers'])
         })
 
     })
-    /*.config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-            .state('app', {
-                url: "/app",
-                abstract: true,
-                templateUrl: "templates/menu.html",
-                controller: 'AppCtrl'
-            })
-
-            .state('app.settings', {
-                url: "/settings",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/settings.html"
-
-                    }
-                }
-            })
-
-            .state('app.browse', {
-                url: "/browse",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/browse.html"
-                    }
-                }
-            })
-            .state('app.index', {
-                url: "/index",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/index.html",
-                        controller: 'AppCtrl'
-                    }
-                }
+            .state('home', {
+                url: "/",
+                templateUrl: "templates/players.html",
+                controller: 'addPlayer',
+                scope: this
             });
 
 
+
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/index');
-    });*/
+        $urlRouterProvider.otherwise('/');
+    });

@@ -1,0 +1,19 @@
+<div class="bar bar-header bar-stable">
+    <div class="buttons">
+        <button class="button" ng-click="openModal()">Add player</button>
+    </div>
+    <h1 class="title">Bank</h1>
+    <div class="buttons">
+        <button class="button button-energized" >Bank <span>30 000</span></button>
+    </div>
+</div>
+<div class="content has-header padding">
+<div class="list">
+
+    <div class="item" ng-repeat="list in players.lists">
+        {{$index + 1}} {{player.name}} {{list.name}} {{name}}
+        <span class="badge badge-assertive">{{player.money}}</span>
+
+    </div>
+</div>
+</div>

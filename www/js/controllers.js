@@ -1,5 +1,7 @@
 angular.module('starter.controllers', [])
     .controller('addPlayer', function ($scope, $ionicModal) {
+        $scope.players=[];
+        $scope.players.lists= [];
 
         $ionicModal.fromTemplateUrl('templates/addplayer.html', {
             scope: $scope,
@@ -26,4 +28,12 @@ angular.module('starter.controllers', [])
         $scope.$on('modal.removed', function () {
             // Execute action
         });
+
+        $scope.playerAdd = function(players, list){
+            $scope.players.lists.push({name:$scope.list.name, money:$scope.list.name});
+            $scope.closeModal();
+            console.log($scope.players.lists)
+        }
+
     })
+
