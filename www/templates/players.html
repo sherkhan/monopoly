@@ -1,4 +1,4 @@
-<div class="bar bar-header bar-stable">
+<ion-header-bar>
     <div class="buttons">
         <button class="button" ng-click="openModal()">Add player</button>
     </div>
@@ -6,14 +6,14 @@
     <div class="buttons">
         <button class="button button-energized" >Bank <span>30 000</span></button>
     </div>
-</div>
-<div class="content has-header padding">
-<div class="list">
+</ion-header-bar>
+<ion-content>
+<ion-list>
 
-    <div class="item" ng-repeat="list in players.lists">
-        {{$index + 1}} {{player.name}} {{list.name}} {{name}}
+    <ion-item ng-repeat="player in players">
+        {{$index + 1}} {{player.name}}
         <span class="badge badge-assertive">{{player.money}}</span>
 
-    </div>
-</div>
-</div>
+    </ion-item >
+</ion-list>
+</ion-content>

@@ -6,17 +6,18 @@
         </div>
     </ion-header-bar>
     <ion-content >
-
+        <form ng-submit="playerAdd(player)">
         <div class="list padding">
             <label class="item item-input">
-                <input type="text" placeholder="Name" ng-model="player.list.name">
+                <input type="text" placeholder="Name" ng-model="player.name">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Money" ng-model="player.list.money">
+                <input type="text" placeholder="Money" ng-model="player.money">
             </label>
-            <button class="button button-block button-positive" ng-click="playerAdd()">
+            <button type="submit" class="button button-block button-positive" >
                 Submit
             </button>
         </div>
+        </form>
     </ion-content>
 </ion-modal-view>
