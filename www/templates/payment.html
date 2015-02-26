@@ -1,0 +1,48 @@
+<ion-modal-view >
+    <ion-header-bar>
+        <h1 class="title">Choose target and sum</h1>
+        <div class="buttons">
+            <i class="button button-clear icon ion-close" ng-click="closePaymentModal()"></i>
+        </div>
+    </ion-header-bar>
+    <ion-content >
+        <form ng-submit="calculatePayments(player)">
+            <ion-list>
+
+            <ion-item class="item-checkbox" ng-repeat="player in players">
+                <label class="checkbox">
+                    <input type="checkbox">
+                </label>
+                {{player.name}}
+            </ion-item >
+
+            </ion-list>
+            <div class="list list-inset">
+
+                <div class="row">
+                    <div class="col col-50">Pay</div>
+                    <div class="col col-50">Recive</div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-50">
+                        <label class="item item-input">
+                        <input type="text" placeholder="Money" ng-model="player.minus">
+                    </label>
+                    </div>
+                    <div class="col col-50">
+                        <label class="item item-input">
+                            <input type="text" placeholder="Money" ng-model="player.plus">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="button button-block button-positive" >
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

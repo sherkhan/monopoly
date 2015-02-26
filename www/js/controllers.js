@@ -1,6 +1,12 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
     .controller('addPlayer', function ($scope, $ionicModal) {
-        $scope.players=[];
+        $scope.players=[{
+            name: 'bank',
+            money: 30000,
+            checked: false,
+            minus: 0,
+            plus: 0
+        }];
 
 
 
@@ -24,14 +30,39 @@ angular.module('starter.controllers', [])
         $scope.playerAdd = function(player){
             $scope.players.push({
                 name: player.name,
-                money: player.money
+                money: player.money,
+                checked: false,
+                minus: 0,
+                plus: 0
             });
-
+            console.log($scope.players)
             $scope.closeModal();
 
-            console.log($scope.players)
-        }
+        };
 
+
+
+         $ionicModal.fromTemplateUrl('templates/payment.html', function(modal) {
+                $scope.paymentModal = modal;
+            }, {
+                scope: $scope,
+                animation: 'slide-in-up'
+            });
+
+
+            $scope.openPaymentModal = function () {
+                $scope.paymentModal.show();
+
+            };
+            $scope.closePaymentModal = function () {
+                $scope.paymentModal.hide();
+            };
+
+            $scope.calculatePayments = function(player){
+
+                $scope.closePaymentModal();
+                console.log($scope.players)
+            }
     })
 
 
